@@ -3,6 +3,10 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 
+// All routes variables
+
+const employee = require("./routes/employee")
+
 
 // middleware
 const corsOptions = {
@@ -20,6 +24,8 @@ app.get('/', (req, res) => {
         msg: "Stenhuse Gard",
     });
 });
+
+app.use(`/employees`, employee);
 
 app.use((req, res, next) => {
     var err = new Error("Not Found");
