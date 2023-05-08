@@ -1,24 +1,30 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
-import './App.css';
+
+import { Route, Routes } from 'react-router-dom';
+import './styles/App.css';
+
+// pages and components
+import Header from './components/Header';
+import Home from './pages/Home';
+import Employee from './pages/Employee';
 
 function App() {
-  const [message, setMessage] = useState("");
 
-  // Fetching message from backend on mount
-  useEffect(() => {
-    fetch("http://localhost:8000")
-      .then((res) => res.json())
-      .then((data) =>
-        setMessage(data.msg));
-  }, []);
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>{message}</h1>
-        <p>STENHUSE GÅRD</p>
-      </header>
-    </div>
+    <>
+      <Header />
+      <Routes>
+        <Route
+          path="/" element={<Home />}
+        />
+        <Route
+          path="/anstallda" element={<Employee />}
+        />
+      </Routes >
+    </>
+
   );
 }
 

@@ -12,6 +12,9 @@ const employeeSchema = new mongoose.Schema({
     personalNumber: Number,
     workingNumber: Number,
     salary: Number,
+    accountNumber: Number,
+    bank: String
+
 });
 
 const Employee = mongoose.model("Employee", employeeSchema);
