@@ -1,0 +1,35 @@
+.employee_table {
+    border-collapse: collapse;
+    margin: 0 auto;
+    font-size: 0.8 em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    overflow: hidden;
+
+
+}
+
+.employee_table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+.employee_table th,
+.employee_table td {
+    padding: 12px 15px;
+}
+
+.employee_table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.employee_table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.employee_table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}

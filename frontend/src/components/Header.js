@@ -1,15 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import '../styles/Header.css';
 
 function Header() {
+
+    const [nav, setNav] = useState(false)
+
+
     return (
-        <nav>
+        <nav className='navbar'>
+            <div>  <Link to="/">
+                Home
+            </Link></div>
             <ul>
                 <li>
                     <Link to="/">
-                        Home
+                        Logga In
                     </Link>
+
                 </li>
+
                 <li>
                     <Link to="/anstallda">
                         Anställda

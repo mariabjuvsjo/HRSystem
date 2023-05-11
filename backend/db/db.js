@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
  */
 /* eslint-disable */
 const connectDB = async () => {
-    let dsn = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.feu5g7s.mongodb.net/?retryWrites=true&w=majority`
+    let dsn = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.feu5g7s.mongodb.net/StenhuseEmployeer?retryWrites=true&w=majority`
 
     try {
         const conn = await mongoose.connect(dsn, {

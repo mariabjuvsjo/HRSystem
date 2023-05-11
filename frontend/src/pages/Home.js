@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import LogIn from '../components/LogIn';
 
 function Home() {
     const [message, setMessage] = useState("");
@@ -12,9 +13,9 @@ function Home() {
                 setMessage(data.msg));
     }, []);
     return (
-        <div>
-            <h1>{message}</h1>
-        </div>
+        <main className='home_container'>
+            <LogIn />
+        </main>
 
     )
 }

@@ -12,7 +12,7 @@ const Employee = require('../schemas/Employee');
 const getAllEmployees = async (req, res) => {
     const employees = await Employee.find({});
 
-    res.status(200).json(employees);
+    return res.status(200).json(employees);
 };
 
 /**
@@ -56,7 +56,9 @@ const addNewEmployee = async (req, res) => {
         country,
         personalNumber,
         workingNumber,
-        salary } = req.body;
+        salary,
+        accountNumber,
+        bank } = req.body;
 
     try {
         const employee = await Employee.create({
@@ -68,7 +70,9 @@ const addNewEmployee = async (req, res) => {
             country,
             personalNumber,
             workingNumber,
-            salary
+            salary,
+            accountNumber,
+            bank
         });
 
         res.status(200).json(employee);
@@ -100,7 +104,9 @@ const updateOneEmployee = async (req, res) => {
         country: req.body.country,
         personalNumber: req.body.personalNumber,
         workingNumber: req.body.workingNumber,
-        salary: req.body.salary
+        salary: req.body.salary,
+        accountNumber: req.body.accountNumber,
+        bank: req.body.bank
     };
 
     try {
@@ -140,5 +146,7 @@ const deleteOneEmployee = async (req, res) => {
 module.exports = {
     getAllEmployees,
     getOneEmployee,
-    addNewEmployee
+    addNewEmployee,
+    updateOneEmployee,
+    deleteOneEmployee
 }
