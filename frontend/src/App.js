@@ -7,7 +7,10 @@ import './styles/App.css';
 import Header from './components/Header';
 import Home from './pages/Home';
 import Employee from './pages/Employee';
-import OneEmployee from './pages/OneEmployee';
+import OneEmployee from './components/OneEmployee';
+import NewEmployee from './components/NewEmployee';
+import UpdateEmployee from './components/UpdateEmployee';
+import TimeRaport from './pages/TimeRaport';
 
 function App() {
 
@@ -25,6 +28,15 @@ function App() {
         />
         <Route
           path="/anstallda/:id" element={<OneEmployee />}
+        />
+        <Route
+          path="/anstallda/skapa" element={<NewEmployee />}
+        />
+        <Route
+          path="/anstallda/uppdatera/:id" element={<UpdateEmployee />}
+        />
+        <Route
+          path="/timrapport" element={<TimeRaport />}
         />
       </Routes >
     </>

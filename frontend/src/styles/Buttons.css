@@ -1,0 +1,37 @@
+.btn.small {
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: none;
+    margin-bottom: 5px;
+    border: 2px solid #74D680;
+    color: #378B29;
+    font-size: 0.85em;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    transition: all .5s;
+    cursor: pointer;
+}
+
+.btn.small:hover {
+    background: #74D680;
+    color: #fff;
+}
+
+
+
+.btn.big {
+    padding: 12px 25px;
+    border-radius: 5px;
+    background: none;
+    border: 2px solid #74D680;
+    color: #378B29;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all .5s;
+    cursor: pointer;
+}
+
+.btn.big:hover {
+    background: #74D680;
+    color: #fff;
+}

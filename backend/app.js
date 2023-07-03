@@ -6,6 +6,7 @@ const cors = require("cors");
 // All routes variables
 
 const employee = require("./routes/employee")
+const hourRaport = require('./routes/hourRaport')
 
 
 // middleware
@@ -27,6 +28,8 @@ app.get('/', (req, res) => {
 
 app.use(`/employees`, employee);
 
+app.use(`/workraport`, hourRaport);
+
 app.use((req, res, next) => {
     var err = new Error("Not Found");
 
@@ -35,3 +38,4 @@ app.use((req, res, next) => {
 });
 
 module.exports = app;
+

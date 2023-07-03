@@ -39,19 +39,3 @@
     font-size: 24px;
     margin-bottom: 15px;
 }
-
-.login_button {
-    padding: 15px 30px;
-    border-radius: 20px;
-    background: none;
-    border: 2px solid #74D680;
-    color: #378B29;
-    font-size: 20px;
-    font-weight: bold;
-    transition: all .5s;
-}
-
-.login_button:hover {
-    background: #74D680;
-    color: #fff;
-}

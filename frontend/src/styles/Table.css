@@ -1,35 +1,96 @@
 .employee_table {
+    border: 1px solid #ccc;
     border-collapse: collapse;
-    margin: 0 auto;
-    font-size: 0.8 em;
-    font-family: sans-serif;
-    min-width: 400px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    border-radius: 5px;
-    overflow: hidden;
-
-
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+    font-family: "Open Sans", sans-serif;
+    line-height: 1.25;
 }
 
-.employee_table thead tr {
-    background-color: #009879;
-    color: #ffffff;
-    text-align: left;
+.employee_table caption {
+    font-size: 1.5em;
+    margin: .5em 0 .75em;
+}
+
+.employee_table tr {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: .35em;
+}
+
+.employee_table tr:nth-child(even) {
+    background-color: #ffff;
 }
 
 .employee_table th,
 .employee_table td {
-    padding: 12px 15px;
+    padding: .625em;
+    text-align: center;
+    word-wrap: break-word
 }
 
-.employee_table tbody tr {
-    border-bottom: 1px solid #dddddd;
+.employee_table th {
+    font-size: .85em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    background-color: #74D680;
+    color: #111;
 }
 
-.employee_table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
-}
 
-.employee_table tbody tr:last-of-type {
-    border-bottom: 2px solid #009879;
+
+
+
+
+@media screen and (max-width: 800px) {
+    .employee_table {
+        border: 0;
+    }
+
+    .employee_table caption {
+        font-size: 1.3em;
+    }
+
+    .employee_table thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+
+    .employee_table tr {
+        border-bottom: 3px solid #ddd;
+        display: block;
+        margin-bottom: .625em;
+    }
+
+
+
+    .employee_table td {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: .8em;
+        text-align: right;
+    }
+
+    .employee_table td::before {
+        /*
+      * aria-label has no advantage, it won't be read inside a .employee_table 
+      content: attr(aria-label);
+      */
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .employee_table td:last-child {
+        border-bottom: 0;
+    }
 }

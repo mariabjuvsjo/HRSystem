@@ -31,6 +31,34 @@ const employeeModel = {
 
         }
 
+    },
+
+    addNewEmployee: async function addNewEmployee(content) {
+        try {
+
+            const response = await api.post('/employees', content)
+
+            console.log(response.data)
+
+            return response.data
+
+        } catch (err) {
+            console.log(err.message)
+
+        }
+    },
+
+    updateEmployee: async function updateEmployee(content, id) {
+        try {
+
+            await api.put(`/employees/${id}`, content)
+
+
+
+        } catch (err) {
+            console.log(err.message)
+
+        }
     }
 
 

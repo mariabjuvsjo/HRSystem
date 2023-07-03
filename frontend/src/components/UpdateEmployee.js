@@ -1,27 +1,30 @@
-
-import { useNavigate } from 'react-router-dom'
-
-import '../styles/App.css'
-import '../styles/Form.css'
-import '../styles/Buttons.css'
+import React from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import employeeModel from '../models/employeeModel'
 
-function NewEmployee() {
+import '../styles/Buttons.css'
+import '../styles/Form.css'
+
+
+function UpdateEmployee() {
+    const { state } = useLocation()
+    console.log(state)
+
     const navigate = useNavigate()
     const [informa, setInforma] = useState({
-        firstName: '',
-        lastName: '',
-        email: '',
-        phoneNumber: '',
-        address: '',
-        country: '',
-        personalNumber: parseInt(0),
-        coordinationNumber: parseInt(0),
-        workingNumber: parseInt(0),
-        salary: parseInt(0),
-        accountNumber: parseInt(0),
-        bank: '',
+        firstName: state.firstName,
+        lastName: state.lastName,
+        email: state.email,
+        phoneNumber: state.phoneNumber,
+        address: state.address,
+        country: state.country,
+        personalNumber: parseInt(state.personalNumber),
+        coordinationNumber: parseInt(state.coordinationNumber),
+        workingNumber: parseInt(state.workingNumber),
+        salary: parseInt(state.salary),
+        accountNumber: parseInt(state.accountNumber),
+        bank: state.bank,
 
     })
 
@@ -48,28 +51,15 @@ function NewEmployee() {
         e.preventDefault()
 
         try {
-            await employeeModel.addNewEmployee(informa)
+            await employeeModel.updateEmployee(informa, state._id)
             navigate('/anstallda')
 
         } catch (err) {
             alert("something wrong")
         }
 
-        setInforma({
-            firstName: '',
-            lastName: '',
-            email: '',
-            phoneNumber: '',
-            address: '',
-            country: '',
-            personalNumber: 0,
-            workingNumber: 0,
-            salary: 0,
-            accountNumber: 0,
-            bank: '',
-        })
-
     }
+
 
 
     return (
@@ -95,11 +85,9 @@ function NewEmployee() {
                 <input type="text" placeholder="land" id="country" name="country" value={country} onChange={handleForm} />
 
                 <label htmlFor="personalNumber">Personnummer</label>
-                <input type="text" placeholder="personnummer" id="personalNumber" name="personalNumber" value={personalNumber} onChange={handleForm} />
-
-                <label htmlFor="coordinationNumber">Samordnings nummer</label>
-                <input type="text" placeholder="person/samordnings nummer" id="coordinationNumber" name="coordinationNumber" value={coordinationNumber} onChange={handleForm} />
-
+                <input type="text" placeholder="person nummer" id="personalNumber" name="personalNumber" value={personalNumber} onChange={handleForm} />
+                <label htmlFor="coordinationNumber">Samordningsnummer</label>
+                <input type="text" placeholder="samordnings nummer" id="coordinationNumber" name="coordinationNumber" value={coordinationNumber} onChange={handleForm} />
                 <label htmlFor="workingNumber">Arbets Nummer</label>
                 <input type="text" placeholder="Arbets nummmer" id="workingNumber" name="workingNumber" value={workingNumber} onChange={handleForm} />
 
@@ -113,12 +101,13 @@ function NewEmployee() {
                 <label htmlFor="bank">Bank</label>
                 <input type="text" placeholder="bank" id="bank" name="bank" value={bank} onChange={handleForm} />
 
-                <button className="btn big">Lägg till</button>
+                <button className="btn big">Ändra</button>
             </form>
+
 
         </div>
 
     )
 }
 
-export default NewEmployee
+export default UpdateEmployee

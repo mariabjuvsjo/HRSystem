@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import '../styles/Home.css'
+import '../styles/Buttons.css'
 import { useNavigate } from 'react-router-dom'
 
 function LogIn() {
@@ -41,7 +42,7 @@ function LogIn() {
 
                 <input className='form_input' type="password" placeholder="Password" id="password" name="password" value={password} onChange={handleForm} />
 
-                <button className="login_button">Logga In</button>
+                <button className="btn big">Logga In</button>
 
             </form>
         </div>

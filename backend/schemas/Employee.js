@@ -10,6 +10,7 @@ const employeeSchema = new mongoose.Schema({
     address: String,
     country: String,
     personalNumber: Number,
+    coordinationNumber: Number,
     workingNumber: Number,
     salary: Number,
     accountNumber: Number,

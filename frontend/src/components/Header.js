@@ -25,6 +25,11 @@ function Header() {
                         Anställda
                     </Link>
                 </li>
+                <li>
+                    <Link to="/timrapport">
+                        TimRapport
+                    </Link>
+                </li>
             </ul>
 
         </nav>
